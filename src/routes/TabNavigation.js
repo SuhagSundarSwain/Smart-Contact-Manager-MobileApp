@@ -23,7 +23,7 @@ const TabNavigation = () => {
           tabBarIcon: ({color, size}) => (
             <HomeIcon name="home" size={size} color={color} />
           ),
-          header: () => null,
+          header: () => {},
         }}
       />
       <Tab.Screen

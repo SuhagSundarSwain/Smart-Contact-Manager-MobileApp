@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
+import HomePageHeader from '../components/Home/HomePageHeader';
+import FeaturesSection from '../components/Home/FeaturesSection/FeaturesSection';
 
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <HomePageHeader />
+      <FeaturesSection />
     </View>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
