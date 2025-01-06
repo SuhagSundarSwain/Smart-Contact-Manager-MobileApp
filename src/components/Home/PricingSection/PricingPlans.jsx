@@ -3,6 +3,7 @@ import React from 'react';
 import PriceCard from './PriceCard';
 import pricingPlanList from './PricingPlanList';
 import LinearGradient from 'react-native-linear-gradient';
+import isTablet from '../../../store/AppHelper.js/isTablet';
 
 const {width} = Dimensions.get('window');
 
@@ -25,7 +26,10 @@ const PricingPlans = () => {
           />
         )}
         horizontal
-        contentContainerStyle={{gap: 50, paddingHorizontal: 40}}
+        contentContainerStyle={{
+          gap: isTablet() ? 70 : 50,
+          paddingHorizontal: isTablet() ? 50 : 40,
+        }}
         showsHorizontalScrollIndicator={false}
       />
     </LinearGradient>
@@ -39,12 +43,12 @@ const styles = StyleSheet.create({
   start: {x: 0, y: 0},
   end: {x: 1, y: 0},
   title: {
-    fontSize: width * 0.04,
+    fontSize: isTablet() ? width * 0.03 : width * 0.04,
   },
   pricingContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 20,
-    gap: 20,
+    paddingVertical: isTablet() ? 50 : 20,
+    gap: isTablet() ? 40 : 20,
   },
 });

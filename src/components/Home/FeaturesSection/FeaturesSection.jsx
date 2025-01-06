@@ -3,6 +3,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import FeatureCardList from './FeatureCardsList';
+import isTablet from '../../../store/AppHelper.js/isTablet';
 
 const {width} = Dimensions.get('window');
 
@@ -39,17 +40,16 @@ const styles = StyleSheet.create({
   fsContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 10,
-    gap: 20,
-    paddingBottom: 20,
+    paddingVertical: isTablet() ? 50 : 20,
+    gap: isTablet() ? 40 : 20,
   },
   title: {
-    fontSize: width * 0.04,
+    fontSize: isTablet() ? width * 0.03 : width * 0.04,
   },
   fetureCard: {
     alignItems: 'center',
     gap: 10,
-    width: width * 0.75,
+    width: isTablet() ? width * 0.25 : width * 0.75,
     paddingVertical: 20,
     backgroundColor: 'white',
     borderRadius: 30,

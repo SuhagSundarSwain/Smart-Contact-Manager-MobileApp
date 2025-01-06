@@ -9,6 +9,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+import isTablet from '../../store/AppHelper.js/isTablet';
 
 const {width} = Dimensions.get('window');
 const HomePageHeader = () => {
@@ -45,11 +46,10 @@ export default HomePageHeader;
 const styles = StyleSheet.create({
   bgColors: ['rgb(230, 230, 255)', 'rgb(240, 240, 255)', 'white'],
   hphContainer: {
-    paddingVertical: 10,
-    paddingBottom: 10,
+    paddingVertical: isTablet() ? 50 : 20,
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 5,
+    gap: isTablet() ? 20 : 5,
   },
   title: {
     fontSize: width * 0.05,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     paddingHorizontal: width * 0.025,
-    fontSize: width * 0.026,
+    fontSize: isTablet() ? width * 0.02 : width * 0.026,
     textAlign: 'center',
     color: 'grey',
   },
