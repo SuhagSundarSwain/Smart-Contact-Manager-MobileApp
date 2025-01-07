@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   benefitText: {
-    fontSize: isTablet() && 20,
+    fontSize: isTablet() ? 20 : 13,
   },
 });

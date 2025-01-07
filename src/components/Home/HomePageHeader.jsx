@@ -10,9 +10,11 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 import isTablet from '../../store/AppHelper.js/isTablet';
+import {useNavigation} from '@react-navigation/native';
 
 const {width} = Dimensions.get('window');
 const HomePageHeader = () => {
+  const navigation = useNavigation();
   return (
     <LinearGradient
       colors={styles.bgColors}
@@ -28,7 +30,9 @@ const HomePageHeader = () => {
         with Smart Contacts - the ultimate solution for modern professionals.
       </Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.gsButton}>
+        <TouchableOpacity
+          style={styles.gsButton}
+          onPress={() => navigation.navigate('Contacts')}>
           <Text style={{color: 'white'}}>
             Get Started <Icon name="arrowright" color="white" />
           </Text>

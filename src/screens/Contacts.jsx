@@ -1,12 +1,21 @@
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
+import QuickActions from '../components/ContactsPage/QuickActions/QuickActions';
+import RecentContacts from '../components/ContactsPage/RecentContacts/RecentContacts';
 
 const Contacts = () => {
   return (
-    <View>
-      <Text>Contacts</Text>
+    <View style={styles.contactsScreen}>
+      <QuickActions />
+      <RecentContacts />
     </View>
   );
 };
 
 export default Contacts;
+
+const styles = StyleSheet.create({
+  contactsScreen: {
+    paddingHorizontal: 15,
+  },
+});
