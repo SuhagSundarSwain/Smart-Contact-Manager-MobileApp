@@ -1,14 +1,14 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import QuickActions from '../components/ContactsPage/QuickActions/QuickActions';
 import RecentContacts from '../components/ContactsPage/RecentContacts/RecentContacts';
 
 const Contacts = () => {
   return (
-    <View style={styles.contactsScreen}>
+    <ScrollView style={styles.contactsScreen}>
       <QuickActions />
       <RecentContacts />
-    </View>
+    </ScrollView>
   );
 };
 

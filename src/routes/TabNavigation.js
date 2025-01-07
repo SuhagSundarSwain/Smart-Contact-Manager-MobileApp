@@ -3,7 +3,7 @@ import Home from '../screens/Home';
 import Contacts from '../screens/Contacts';
 import AddContacts from '../screens/AddContacts';
 import Entypo from 'react-native-vector-icons/Entypo';
-import FontAwesome from 'react-native-vector-icons/FontAwesome'; // Optional icons
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Profile from '../screens/Profile';
