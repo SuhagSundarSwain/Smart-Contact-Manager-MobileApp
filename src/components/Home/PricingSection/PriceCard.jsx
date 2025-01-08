@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, Pressable} from 'react-native';
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import isTablet from '../../../store/AppHelper.js/isTablet';
@@ -20,6 +20,9 @@ const PriceCard = ({title, priceRate, benefits}) => {
           <Text style={styles.benefitText}>{benefit}</Text>
         </View>
       ))}
+      <Pressable style={styles.priceSelectButton}>
+        <Text style={styles.priceSelectButtonText}>Select Plan</Text>
+      </Pressable>
     </View>
   );
 };
@@ -54,5 +57,16 @@ const styles = StyleSheet.create({
   },
   benefitText: {
     fontSize: isTablet() ? 20 : 13,
+  },
+  priceSelectButton: {
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    borderRadius: 10,
+    margin: 10,
+  },
+  priceSelectButtonText: {
+    color: 'white',
   },
 });

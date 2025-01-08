@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Add Contact"
       screenOptions={{
         tabBarActiveTintColor: '#7654ff',
         tabBarActiveBackgroundColor: '#eaeaea',
