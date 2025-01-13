@@ -7,6 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Profile from '../screens/Profile';
+import AuthStack from './AuthStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,7 @@ const TabNavigation = () => {
       screenOptions={{
         tabBarActiveTintColor: '#7654ff',
         tabBarActiveBackgroundColor: '#eaeaea',
+        headerShown: false,
       }}>
       <Tab.Screen
         name="Home"
@@ -25,12 +27,11 @@ const TabNavigation = () => {
           tabBarIcon: ({color, size}) => (
             <Entypo name="home" size={size} color={color} />
           ),
-          header: () => {},
         }}
       />
       <Tab.Screen
         name="Contacts"
-        component={Contacts}
+        children={() => <AuthStack component={Contacts} />}
         options={{
           tabBarIcon: ({color, size}) => (
             <FontAwesome name="address-book" size={size} color={color} />
@@ -39,7 +40,9 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Add Contact"
-        component={AddContacts}
+        children={() => (
+          <AuthStack component={AddContacts} name={'Add Contact '} />
+        )}
         options={{
           tabBarIcon: ({color, size}) => (
             <Ionicons name="add-circle-outline" size={size} color={color} />
@@ -48,7 +51,7 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        children={() => <AuthStack component={Profile} />}
         options={{
           tabBarIcon: ({size, color}) => (
             <FontAwesome6 name="circle-user" size={size} color={color} />
