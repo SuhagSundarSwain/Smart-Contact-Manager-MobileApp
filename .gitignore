@@ -76,3 +76,4 @@ yarn-error.log
 
 .vscode
 setJDK17.bat
+.env

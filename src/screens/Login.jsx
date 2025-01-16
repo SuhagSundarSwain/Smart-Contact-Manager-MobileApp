@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
+import LoginForm from '../components/LoginPage/LoginForm/LoginForm';
 
 const Login = () => {
   return (
     <View>
-      <Text>Login</Text>
+      <LoginForm />
     </View>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
