@@ -1,12 +1,30 @@
-import {createContext} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import {useColorScheme} from 'react-native';
+import {SCM_BACKEND_SERVER} from '@env';
 
-const ThemeContext = createContext({rkMode: false});
+export const ThemeContext = createContext({
+  darkMode: false,
+  setDarkMode: () => {},
+});
 
 const ThemeContextProvider = ({children}) => {
-  const darkMode = useColorScheme() === 'dark';
+  const [darkMode, setDarkMode] = useState(useColorScheme() === 'dark');
+
+  useEffect(() => {
+    fetch(`${SCM_BACKEND_SERVER}/getTheme`, {method: 'GET'})
+      .then(res => res.json())
+      .then(data => {
+        setDarkMode(data['theme'] === 'dark');
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }, []);
+
   return (
-    <ThemeContext.Provider value={{darkMode}}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{darkMode, setDarkMode}}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
